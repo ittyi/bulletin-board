@@ -8,11 +8,16 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import RootThreadList from "./routes/RootThreadList";
+import ThreadNew from "./components/ThreadNew";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootThreadList />,
+  },
+  {
+    path: "/thread/new",
+    element: <ThreadNew />,
   },
 ]);
 
