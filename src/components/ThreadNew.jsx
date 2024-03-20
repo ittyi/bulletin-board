@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function ThreadNew() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
 
   function createThread() {
@@ -12,6 +13,7 @@ export default function ThreadNew() {
       })
       .then((response) => {
         console.log(response.data);
+        navigate("/");
       });
   }
 
