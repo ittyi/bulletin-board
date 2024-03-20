@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 export default function ThreadNew() {
+  const [title, setTitle] = useState("");
+
   function createThread() {
     axios
       .post("https://railway.bulletinboard.techtrain.dev/threads", {
-        title: "Hello World!",
+        title: title,
       })
       .then((response) => {
         console.log(response.data);
@@ -16,7 +19,8 @@ export default function ThreadNew() {
     <>
       <h1>スレッド新規作成</h1>
       <div>
-         <button onClick={createThread}>Create Post</button>
+        <input value={title} onChange={(event) => setTitle(event.target.value)} />
+        <button onClick={createThread}>Create Post</button>
       </div>
       <Link to={`/`}>top へ戻る</Link>
     </>
