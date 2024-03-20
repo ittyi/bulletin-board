@@ -15,8 +15,8 @@ function App() {
     <>
       <main>
         <ul>
-          {listThread.map(thread => (
-              <li>{thread.title}</li>
+          {listThread.map((thread) => (
+              <li key={String(thread.id)}>{thread.title}</li>
           ))}
         </ul>
       </main>
