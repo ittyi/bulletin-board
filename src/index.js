@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 
 import RootThreadList from "./routes/RootThreadList";
 import ThreadNew from "./components/ThreadNew";
+import ThreadDetail from "./components/ThreadDetail";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/thread/new",
     element: <ThreadNew />,
+  },
+  {
+    path: "/thread/:thread_id",
+    element: <ThreadDetail />,
   },
 ]);
 

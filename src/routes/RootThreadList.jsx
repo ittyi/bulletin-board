@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import {
+  Link,
+} from "react-router-dom";
 
 export default function RootThreadList() {
     const [listThread, setListThread] = useState([{}]);
@@ -16,7 +19,11 @@ export default function RootThreadList() {
           <main>
             <ul>
               {listThread.map((thread) => (
-                  <li key={String(thread.id)}>{thread.title}</li>
+                  <li key={String(thread.id)}>
+                    <Link to={`/thread/${thread.id}`}>
+                      {thread.title}
+                    </Link>
+                  </li>
               ))}
             </ul>
           </main>
