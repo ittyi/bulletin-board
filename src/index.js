@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <ThreadNew />,
   },
   {
-    path: "/thread/:thread_id",
+    path: "/thread/:threadId",
     element: <ThreadDetail />,
   },
 ]);
