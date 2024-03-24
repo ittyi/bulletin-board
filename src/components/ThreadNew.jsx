@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "@mui/material";
 
 export default function ThreadNew() {
   const navigate = useNavigate();
@@ -19,12 +20,19 @@ export default function ThreadNew() {
 
   return (
     <>
-      <h1>スレッド新規作成</h1>
-      <div>
-        <input value={title} onChange={(event) => setTitle(event.target.value)} />
-        <button onClick={createThread}>Create Post</button>
+      <div className="threadnew-layout">
+        <h2>スレッド新規作成</h2>
+        <div className="threadnew-main">
+          <input
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+          />
+          <div className="threadnew-btn">
+            <div><Link to={`/`}>top へ戻る</Link></div>
+            <Button onClick={createThread} variant="outlined">作成</Button>
+          </div>
+        </div>
       </div>
-      <Link to={`/`}>top へ戻る</Link>
     </>
   );
 }

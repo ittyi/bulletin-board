@@ -1,19 +1,137 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ul {
+  padding-left: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  list-style: none;
 }
- */
 
-.flb-jcsb{
+a {
+  text-decoration: none;
+}
+
+.flb-jcsb {
   display: flex;
   justify-content: space-between;
+}
+
+/* threadlist */
+.threadlist-main {
+  display: flex;
+  justify-content: center;
+}
+
+.threadlist-all {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.threadlist-ul .threadlist-li {
+  line-height: 1.5;
+  padding: 0.5em 0 0.5em 1.4em;
+  border-bottom: dashed 1px gray;
+  list-style-type: none !important;
+}
+
+.threadlist-ul .threadlist-li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f138"; /*アイコン種類*/
+  position: absolute;
+  left: 0.5em; /*左端からのアイコンまで*/
+  color: #fff; /*アイコン色*/
+}
+
+.threadlist-ul .threadlist-li:last-of-type {
+  border-bottom: none;
+}
+
+.threadlist-ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: solid 2px gray;
+  padding: 0 0.5em;
+  position: relative;
+}
+
+/* threaddetail */
+.threaddetail-layout {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.threaddetail-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.threaddetail-ul .threaddetail-li {
+  width: 300px;
+  line-height: 1.5;
+  padding: 0.5em 0 0.5em 1.4em;
+  border-bottom: dashed 1px gray;
+  list-style-type: none !important;
+}
+
+.threaddetail-ul .threaddetail-li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f138"; /*アイコン種類*/
+  position: absolute;
+  left: 0.5em; /*左端からのアイコンまで*/
+  color: #fff; /*アイコン色*/
+}
+
+.threaddetail-ul .threaddetail-li:last-of-type {
+  border-bottom: none;
+}
+
+.threaddetail-ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: solid 2px gray;
+  padding: 0 0.5em;
+  position: relative;
+}
+
+.create-message-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-message-form input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 11em;
+  height: 2em;
+}
+
+/* threadnew */
+.threadnew-layout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.threadnew-main input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+  height: 2em;
+}
+
+.threadnew-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.threadnew-btn div{
+  padding-top: 5px;
+  margin-right: 10px;
+}
+
+.threadnew-btn button{
+  margin-left: 10px;
 }

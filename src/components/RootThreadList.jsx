@@ -14,17 +14,20 @@ export default function RootThreadList() {
 
   return (
     <>
-      <main>
-        <ul>
-          {listThread.map((thread) => (
-            <li key={String(thread.id)}>
-              <Link to={`/thread/${thread.id}`} state={thread.title}>
-                {thread.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
+      <div className="threadlist-main">
+        <div className="threadlist-all">
+          <h2>新着スレッド</h2>
+          <ul className="threadlist-ul">
+            {listThread.map((thread) => (
+              <li key={String(thread.id)} className="threadlist-li">
+                <Link to={`/thread/${thread.id}`} state={thread.title}>
+                  {thread.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </>
   );
 }
