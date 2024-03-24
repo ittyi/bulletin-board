@@ -16,7 +16,14 @@ export default function ThreadDetail() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setListMessage(data.posts);
+        if (data.posts.length <= 0) {
+          setListMessage([{
+            id: "none",
+            post: "メッセージがまだ存在しません"
+          }]);
+        } else {
+          setListMessage(data.posts);
+        }
       });
   }, [threadId]);
 
