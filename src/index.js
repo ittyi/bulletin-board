@@ -7,30 +7,34 @@ import {
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import RootThreadList from "./routes/RootThreadList";
+import RootThreadList from "./components/RootThreadList";
 import ThreadNew from "./components/ThreadNew";
 import ThreadDetail from "./components/ThreadDetail";
+import Root from './components/Root';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <RootThreadList />,
-  },
-  {
-    path: "/thread/new",
-    element: <ThreadNew />,
-  },
-  {
-    path: "/thread/:threadId",
-    element: <ThreadDetail />,
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <RootThreadList />,
+      },
+      {
+        path: "/thread/new",
+        element: <ThreadNew />,
+      },
+      {
+        path: "/thread/:threadId",
+        element: <ThreadDetail />,
+      },
+    ]
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function
